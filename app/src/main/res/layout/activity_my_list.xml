@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myList"
+    android:background="#F7F2F7">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/brenda"></View>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar4"/>
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:hint="Cari Barang Bekas"
+                android:layout_alignParentStart="true"
+                android:paddingHorizontal="15dp"
+                android:layout_centerVertical="true"
+                android:inputType="text"
+                android:ems="9"
+                android:background="@drawable/vctrsearch"/>
+
+            <LinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_sign">
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/search"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecycler"
+        android:layout_marginTop="105dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center"
+            android:background="@drawable/vctr5">
+
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="20pt"
+                android:layout_marginRight="10pt"
+                android:background="@drawable/homew"/>
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="20pt"
+                android:layout_marginRight="25pt"
+                android:background="@drawable/listw"
+                android:backgroundTint="#FFD12E" />
+            <Button
+                android:layout_width="19pt"
+                android:layout_height="20pt"
+                android:layout_marginLeft="25pt"
+                android:background="@drawable/lovew" />
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="20pt"
+                android:layout_marginLeft="10pt"
+                android:background="@drawable/personw" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/vctr"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:background="@drawable/plus"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F2F7"
+    tools:context=".tambah">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/brenda"></View>
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_sign"
+        android:backgroundTint="#525588"
+        android:progressBackgroundTint="#525588"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/te"
+        android:text="Tambah Barang Bekas"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="23sp"
+        android:textColor="#DA5B5C"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/te"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="85dp"
+        android:layout_marginTop="15dp">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/nb"/>
+           <EditText
+               android:id="@+id/namaB"
+               android:backgroundTint="#DA5B5C"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/nb"
+               android:ems="10"
+               android:inputType="text" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/uk"/>
+           <EditText
+               android:id="@+id/ukuranB"
+               android:backgroundTint="#DA5B5C"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/uk"
+               android:ems="10"
+               android:inputType="text" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/keb"/>
+           <EditText
+               android:id="@+id/kekuranganB"
+               android:backgroundTint="#DA5B5C"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/keb"
+               android:ems="10"
+               android:inputType="textMultiLine" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/lok"/>
+           <EditText
+               android:id="@+id/lokasiB"
+               android:backgroundTint="#DA5B5C"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/lok"
+               android:ems="10"
+               android:inputType="textMultiLine" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/hj"/>
+           <EditText
+               android:id="@+id/hargaB"
+               android:backgroundTint="#DA5B5C"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/hj"
+               android:ems="10"
+               android:inputType="number" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="@string/kb"/>
+           <EditText
+               android:id="@+id/keteranganB"
+               android:backgroundTint="#DA5B5C"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/kb"
+               android:ems="10"
+               android:inputType="textMultiLine" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:text="Pilih Foto Barang"/>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="horizontal"
+               android:layout_height="130dp"
+               android:gravity="center">
+
+               <ImageView
+                   android:id="@+id/iv"
+                   android:layout_width="130dp"
+                   android:padding="20dp"
+                   android:layout_height="130dp"
+                   android:background="@drawable/image"/>
+
+               <Button
+                   android:id="@+id/pilihBtn"
+                   android:layout_width="130dp"
+                   android:layout_height="wrap_content"
+                   android:text="Pilih"
+                   android:textAllCaps="true"
+                   android:textColor="#ffffff"
+                   android:textSize="18sp"
+                   android:background="@drawable/btn_sign"/>
+
+           </LinearLayout>
+
+           <Button
+               android:id="@+id/tambahBtn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_sign"
+               android:text="Tambah"
+               android:textAllCaps="true"
+               android:layout_gravity="center_horizontal"
+               android:textColor="#ffffff"
+               android:textSize="21sp"/>
+
+       </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:gravity="center"
+            android:background="@drawable/vctr5">
+
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="20pt"
+                android:layout_marginRight="10pt"
+                android:background="@drawable/homew" />
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="20pt"
+                android:layout_marginRight="25pt"
+                android:background="@drawable/listw" />
+            <Button
+                android:layout_width="19pt"
+                android:layout_height="20pt"
+                android:layout_marginLeft="25pt"
+                android:background="@drawable/lovew" />
+            <Button
+                android:layout_width="20pt"
+                android:layout_height="20pt"
+                android:layout_marginLeft="10pt"
+                android:background="@drawable/personw" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/vctr"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:background="@drawable/plus"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

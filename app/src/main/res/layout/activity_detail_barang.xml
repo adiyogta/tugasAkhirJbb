@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F2F7"
+    tools:context=".DetailBarang">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/brenda"></View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Detail Barang"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/activity_Recipe_detail_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="38dp"
+        app:cardBackgroundColor="#FF6B6C"
+        android:layout_marginTop="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="295dp"
+                android:background="@drawable/vctrdetail"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/detailimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="355dp"
+                    android:background="#FF6B6C"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:paddingBottom="80dp">
+
+                    <TextView
+                        android:id="@+id/namaDb"
+                        android:text="@string/nb"
+                        android:textSize="20sp"
+                        android:paddingLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"/>
+
+                    <TextView
+                        android:id="@+id/ukuranDb"
+                        android:text="@string/uk"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"/>
+
+                    <TextView
+                        android:id="@+id/kekuranganDb"
+                        android:text="@string/keb"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"/>
+
+                    <TextView
+                        android:id="@+id/lokasiDb"
+                        android:text="@string/lok"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"/>
+
+                    <TextView
+                        android:id="@+id/hargaDb"
+                        android:text="@string/hj"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"/>
+
+                    <TextView
+                        android:id="@+id/keteranganDb"
+                        android:text="@string/kb"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"/>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/vctr5"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="20pt"
+                    android:layout_height="20pt"
+                    android:layout_marginRight="10pt"
+                    android:background="@drawable/homew"
+                    android:backgroundTint="#FFD12E" />
+
+                <Button
+                    android:id="@+id/list"
+                    android:layout_width="20pt"
+                    android:layout_height="20pt"
+                    android:layout_marginRight="25pt"
+                    android:background="@drawable/listw" />
+
+                <Button
+                    android:id="@+id/love"
+                    android:layout_width="19pt"
+                    android:layout_height="20pt"
+                    android:layout_marginLeft="25pt"
+                    android:background="@drawable/lovew" />
+
+                <Button
+                    android:id="@+id/profil"
+                    android:layout_width="20pt"
+                    android:layout_height="20pt"
+                    android:layout_marginLeft="10pt"
+                    android:background="@drawable/personw" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/vctr">
+
+                <ImageButton
+                    android:id="@+id/add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/plus" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

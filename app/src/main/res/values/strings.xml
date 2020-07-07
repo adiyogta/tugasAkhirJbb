@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">tugasAkhirJbb</string>
+    <string name="nb">Nama Barang</string>
+    <string name="uk">Ukuran Barang</string>
+    <string name="kb">Keterangan Barang</string>
+    <string name="keb">Kekurangan Barang</string>
+    <string name="lok">Lokasi</string>
+    <string name="hj">Harga jual</string>
+</resources>
