@@ -42,11 +42,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 //        holder.fotobr.setImageResource((barangdatas.get(position).getImageURL()));
-        holder.namabra.setText(barangdatas.get(position).getNamaB());
-        holder.hargabra.setText(barangdatas.get(position).getHargaB());
         Glide.with(context)
                 .load(barangdatas.get(position).getImageURL())
                 .into(holder.fotobr);
+        holder.namabra.setText(barangdatas.get(position).getNamaB());
+        holder.hargabra.setText(barangdatas.get(position).getHargaB());
+
         holder.detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,6 +2,7 @@ package com.example.tugasakhirjbb;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.EventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<barangdata> list;
     MyAdapter adapter;
+    ValueEventListener eventListener;
+
 
     EditText searchs;
 
@@ -47,6 +51,34 @@ public class MainActivity extends AppCompatActivity {
         myProfil = (Button) findViewById(R.id.profil);
 
         searchs = (EditText)findViewById(R.id.searchEdt);
+
+        recyclerView = (RecyclerView)findViewById(R.id.myRecycler);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this,2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+
+        list = new ArrayList<>();
+
+        final MyAdapter adapter = new MyAdapter(MainActivity.this,list);
+        recyclerView.setAdapter(adapter);
+
+        reference = FirebaseDatabase.getInstance().getReference("Barang");
+        eventListener = reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
+                for(DataSnapshot itemSnapshot: dataSnapshot.getChildren()){
+                    barangdata barangdata2 = itemSnapshot.getValue(barangdata.class);
+                    list.add(barangdata2);
+                }
+
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,68 +108,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recyclerView = (RecyclerView) findViewById(R.id.myRecycler);
-        recyclerView.setLayoutManager( new LinearLayoutManager(this));
-
-
-        reference = FirebaseDatabase.getInstance().getReference().child("Barang");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list = new ArrayList<barangdata>();
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
-                {
-                    barangdata p = dataSnapshot1.getValue(barangdata.class);
-                    list.add(p);
-                }
-                adapter = new MyAdapter(MainActivity.this,list);
-                recyclerView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MainActivity.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         //search
 
-        searchs.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-                filter(s.toString());
-                
-            }
-
-            private void filter(String text) {
-
-                ArrayList<barangdata> filterList = new ArrayList<>();
-
-                for(barangdata item: list){
-
-                    if(item.getNamaB().toLowerCase().contains(text.toLowerCase())){
-
-                        filterList.add(item);
-
-                    }
-
-                }
-
-                adapter.filteredList(filterList);
-
-            }
-        });
+//        searchs.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//                filter(s.toString());
+//
+//            }
+//
+//            private void filter(String text) {
+//
+//                ArrayList<barangdata> filterList = new ArrayList<>();
+//
+//                for(barangdata item: list){
+//
+//                    if(item.getNamaB().toLowerCase().contains(text.toLowerCase())){
+//
+//                        filterList.add(item);
+//
+//                    }
+//
+//                }
+//
+//                adapter.filteredList(filterList);
+//
+//            }
+//        });
 
     }
 }

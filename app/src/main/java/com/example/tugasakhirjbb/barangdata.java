@@ -12,6 +12,10 @@ class barangdata {
     public String keteranganB;
     public String imageURL;
 
+    public barangdata() {
+
+    }
+
     public barangdata(String namaBr, String ukuranBr, String kekuranganBr, String lokasiBr, String hargaBr, String keteranganBBr, String url) {
 
         this.namaB = namaBr;
@@ -72,8 +76,8 @@ class barangdata {
         this.keteranganB = keteranganB;
     }
 
-    public Uri getImageURL() {
-        return Uri.parse(imageURL);
+    public String getImageURL() {
+        return imageURL;
     }
 
     public void setImageURL(String imageURL) {

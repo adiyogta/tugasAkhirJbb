@@ -192,6 +192,7 @@
 
             <Button
                 android:layout_width="20pt"
+                android:id="@+id/homewe"
                 android:layout_height="20pt"
                 android:layout_marginRight="10pt"
                 android:background="@drawable/homew" />
